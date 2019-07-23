@@ -52,8 +52,8 @@ results['memory']['no-sm']['instantiation'] = {}
 results['memory']['sm']['instantiation'] = {}
 
 # Instantiation and termination
-for i in range(1,51):
-    for sm_tag in ['no-sm', 'sm']:
+for sm_tag in ['no-sm', 'sm']:
+    for i in range(1,101):
         results['time'][sm_tag]['instantiation'][i] = []
         results['time'][sm_tag]['termination'][i] = []
         results['memory'][sm_tag]['instantiation'][i] = []
