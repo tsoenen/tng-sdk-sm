@@ -60,31 +60,32 @@ for i in range(1,51):
         package_path = 'packages-' + sm_tag + '/eu.5gtango.cnf-' + str(i) + '-' + sm_tag + '.0.1.tgo'
         for j in range(1, 5):
             mem = psutil.virtual_memory()
-            memory_in = mem['total'] - mem['available']
-	        time_in = dt.datetime.now()
-	        instantiation = cm.instantiate_service(package_path)
-	        print("instantiation requested")
-	        time_out = dt.datetime.now()
+            print(mem)
+            memory_in = (mem.total - mem.available)
+            time_in = dt.datetime.now()
+            instantiation = cm.instantiate_service(package_path)
+            print("instantiation requested")
+            time_out = dt.datetime.now()
             mem = psutil.virtual_memory()
-            memory_out = mem['total'] - mem['available']
-	        if instantiation[0]:
-	            print("deployment " + str(i) + ' ' + str(j) + " successful")
-	            results['time'][sm_tag]['instantiation'][i].append((time_out - time_in).total_seconds())
+            memory_out = (mem.total - mem.available)
+            if instantiation[0]:
+                print("deployment " + str(i) + ' ' + str(j) + " successful")
+                results['time'][sm_tag]['instantiation'][i].append((time_out - time_in).total_seconds())
                 results['memory'][sm_tag]['instantiation'][i].append(memory_out - memory_in)
-	            print(str((time_out - time_in).total_seconds()))
-	            # Termination
-	            time.sleep(1)
-	            time_in = dt.datetime.now()
-	            termination = cm.terminate_service(instantiation[1])
-	            time_out = dt.datetime.now()
-	            if termination[0]:
-	                print("Termination " + str(i) + ' ' + str(j) + " successful")
-	                results['time'][sm_tag]['termination'][i].append((time_out - time_in).total_seconds())
-	                print(str((time_out - time_in).total_seconds()))
-	            else:
-	                print("Termination " + str(i) + ' ' + str(j) + " failed")
-	        else:
-	            print("deployment " + str(i) + ' ' + str(j) + " failed")
+                print(str((time_out - time_in).total_seconds()))
+                # Termination
+                time.sleep(1)
+                time_in = dt.datetime.now()
+                termination = cm.terminate_service(instantiation[1])
+                time_out = dt.datetime.now()
+                if termination[0]:
+                    print("Termination " + str(i) + ' ' + str(j) + " successful")
+                    results['time'][sm_tag]['termination'][i].append((time_out - time_in).total_seconds())
+                    print(str((time_out - time_in).total_seconds()))
+                else:
+                    print("Termination " + str(i) + ' ' + str(j) + " failed")
+            else:
+                print("deployment " + str(i) + ' ' + str(j) + " failed")
 
         # temp write results to file
         print(yaml.dump(results))
