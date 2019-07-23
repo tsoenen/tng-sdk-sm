@@ -1,0 +1,214 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Slices &#8212; 5GTANGO&#39;s CLI tool  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="SLAs" href="slas.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-tnglib">
+<span id="slices"></span><h1>Slices<a class="headerlink" href="#module-tnglib" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="tnglib.create_slice_template">
+<code class="descclassname">tnglib.</code><code class="descname">create_slice_template</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#tnglib.create_slice_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a slice template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> – relative path to where the slice template is stored.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list. [0] is a bool with the result. [1] is a string containing
+the uuid of the uploaded slice template, or an error message.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnglib.delete_slice_template">
+<code class="descclassname">tnglib.</code><code class="descname">delete_slice_template</code><span class="sig-paren">(</span><em>slice_template_uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#tnglib.delete_slice_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a specific slice template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>slice_template_uuid</strong> – uuid of a slice template.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list. [0] is a bool with the result. [1] is a string containing
+the uuid of the removed slice template.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnglib.get_slice_instance">
+<code class="descclassname">tnglib.</code><code class="descname">get_slice_instance</code><span class="sig-paren">(</span><em>slice_instance_uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#tnglib.get_slice_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns info on a specific slice instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>slice_instance_uuid</strong> – uuid of a slice instance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list. [0] is a bool with the result. [1] is a dictionary 
+containing a slice instance record.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnglib.get_slice_instances">
+<code class="descclassname">tnglib.</code><code class="descname">get_slice_instances</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tnglib.get_slice_instances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns info on all slice instances.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list. [0] is a bool with the result. [1] is a list of 
+dictionaries. Each dictionary contains a slice instance record.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnglib.get_slice_template">
+<code class="descclassname">tnglib.</code><code class="descname">get_slice_template</code><span class="sig-paren">(</span><em>slice_template_uuid</em><span class="sig-paren">)</span><a class="headerlink" href="#tnglib.get_slice_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns info on a specific slice template.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>slice_template_uuid</strong> – uuid of a slice template.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list. [0] is a bool with the result. [1] is a dictionary 
+containing a slice template.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tnglib.get_slice_templates">
+<code class="descclassname">tnglib.</code><code class="descname">get_slice_templates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tnglib.get_slice_templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns info on all available slice templates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list. [0] is a bool with the result. [1] is a list of 
+dictionaries. Each dictionary contains a slice template.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">5GTANGO's CLI tool</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slas.html">SLAs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Slices</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="slas.html" title="previous chapter">SLAs</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Thomas Soenen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/slices.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
